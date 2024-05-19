@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      duckdb_net:
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+    volumes:
+      - share_content:/home/share
+  duckdb:
+    image: puppygraph/duckdb-ubuntu:latest
+    container_name: duckdb
+    networks:
+      duckdb_net:
+    volumes:
+      - share_content:/home/share
+networks:
+  duckdb_net:
+    name: puppy-duckdb
+volumes:
+  share_content:
+    name: puppy-duckdb
