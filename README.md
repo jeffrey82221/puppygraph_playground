@@ -19,7 +19,13 @@ docker exec -it duckdb duckdb /home/share/demo.db
 
 create_table.sql
 
-3. [X] Login to puppy graph UI 
+3. [X] Upload schema via command
+
+```
+curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
+```
+
+4. [X] Login to puppy graph UI 
 
 * start UI on browser:
 ```
@@ -31,14 +37,14 @@ http://localhost:8081
 username: puppygraph
 password: puppygraph123
 
-4. [X] Upload schema via command
 
-```
-curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
-```
+5. Now you can start playing around the graph! 
+
+* check http://localhost:8081/notebook/lab for toy examples
 
 
 # Study:
 
 ## How to automate creation of duckdb tables and insertion of schema.json
 
+- [X] Make sure schema upload before browser start works. 
