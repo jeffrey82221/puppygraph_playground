@@ -18,7 +18,7 @@ Study the usage of puppygraph for future implementation of deploying easy cypher
 ```
 
 
-# Manual Setup Steps:
+# Sample Data Setup Steps:
 
 1. [X] Deploy puppy graph service:
 ```
@@ -61,10 +61,22 @@ password: puppygraph123
 * check http://localhost:8081/notebook/lab for toy examples
 
 
-# Study:
+# Demo Pypi Data Setup Steps:
 
-## How to automate creation of duckdb tables and insertion of schema.json
+1. move `schema.json` and `demo.db` of pypi_graph REPO here. 
 
-- [X] Make sure schema upload before browser start works. 
+
+```bash
+cp ../pypi_graph/schema.json .
+cp ../pypi_graph/duckdb/demo.db .
+```
+
+2. Start the puppy graph service and do query.
+
+
+```bash
+./start_service.sh
+```
+
 
 

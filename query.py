@@ -20,7 +20,7 @@ RETURN n
 LIMIT 10
 """
 nodes = session.run(query)
-for record in nodes:
+for i, record in enumerate(nodes):
     node = record["n"]
     print({
         "id": node.element_id,
@@ -28,3 +28,4 @@ for record in nodes:
         "properties": dict(node._properties)
     })
 session.close()
+print('Successfully Query', i + 1, 'Nodes')
