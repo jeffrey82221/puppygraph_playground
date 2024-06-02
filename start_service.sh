@@ -10,4 +10,4 @@ until (( limit < (5-start) )); do
     --user "puppygraph:puppygraph123" \
     localhost:8081/schema | grep -o "OK" && break
 done
-python3 query.py
+python3 graph_check.py
